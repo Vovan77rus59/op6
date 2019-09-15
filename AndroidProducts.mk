@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 Syberia Project
+# Copyright (C) 2018 nitrogen Project
 #
 # This file should set PRODUCT_MAKEFILES to a list of product makefiles
 # to expose to the build system.  LOCAL_DIR will already be set to
@@ -12,9 +12,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/syberia_oneplus6.mk
+    $(LOCAL_DIR)/nitrogen_oneplus6.mk
 
 COMMON_LUNCH_CHOICES := \
-    syberia_oneplus6-user \
-    syberia_oneplus6-userdebug \
-    syberia_oneplus6-eng
+    nitrogen_oneplus6-user \
+    nitrogen_oneplus6-userdebug \
+    nitrogen_oneplus6-eng
