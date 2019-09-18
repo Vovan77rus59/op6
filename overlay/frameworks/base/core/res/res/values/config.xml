@@ -774,4 +774,7 @@
     <!-- Enable overlay for all location components. -->
     <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+
+    <!-- Set default live wallpaper -->
+    <string name="default_wallpaper_component" translatable="false">com.breel.wallpapers18/.soundviz.wallpaper.variations.SoundVizWallpaperV2</string>
 </resources>
