@@ -138,6 +138,9 @@ TARGET_USES_HWC2 := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
+
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml
 
@@ -168,6 +171,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware
 
 BUILD_BROKEN_PHONY_TARGETS := true
+
+# Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
