@@ -167,8 +167,7 @@ PRODUCT_PACKAGES += \
 
 # Pixel Livewallpapers
 PRODUCT_PACKAGES += \
-    WallpapersBReel2018 \
-    LiveWallpapersPicker
+    WallpapersBReel2018
 
 # Telephony
 PRODUCT_PACKAGES += \
