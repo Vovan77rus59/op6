@@ -19,9 +19,6 @@ BOARD_VENDOR := oneplus
 VENDOR_PATH := device/oneplus/oneplus6
 ANDROID_TOP := $(shell pwd)
 
-# Compile libhwui in performance mode
-HWUI_COMPILE_FOR_PERF := true
-
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
