@@ -87,5 +87,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QTI WFD
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
-    debug.sf.enable_hwc_vds=1
+    persist.sys.wfd.virtual=0
