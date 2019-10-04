@@ -36,8 +36,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.gfx_ubwc_disable=0 \
     debug.sf.latch_unsignaled=1 \
-    persist.vendor.color.matrix=2 \
-    debug.cpurend.vsync=false
+    persist.vendor.color.matrix=2
 
 # QTI Performance
 PRODUCT_PROPERTY_OVERRIDES += \
