@@ -96,7 +96,7 @@ PRODUCT_PACKAGES += \
     libvulkan \
     libdisplayconfig \
     libqdMetaData.system \
-    vendor.display.config@1.7
+    vendor.display.config@1.0
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
