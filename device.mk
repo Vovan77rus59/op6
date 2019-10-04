@@ -65,7 +65,8 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default
+    audio.a2dp.default \
+    libaacwrapper
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
