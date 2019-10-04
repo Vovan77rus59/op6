@@ -17,7 +17,6 @@
 BOARD_VENDOR := oneplus
 
 VENDOR_PATH := device/oneplus/oneplus6
-ANDROID_TOP := $(shell pwd)
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
