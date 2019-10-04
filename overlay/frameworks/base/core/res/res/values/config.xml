@@ -768,9 +768,6 @@
     <!-- signification move threshold - if stays below will trigger action -->
     <integer name="nav_gesture_move_threshold">80</integer>
 
-    <!-- Whether device ignores the RSSNR signal implementation -->
-    <bool name="config_ignoreRssnrSignalLevel">true</bool>
-
     <!-- Set default live wallpaper -->
     <string name="default_wallpaper_component" translatable="false">com.breel.wallpapers18/.soundviz.wallpaper.variations.SoundVizWallpaperV2</string>
 </resources>
