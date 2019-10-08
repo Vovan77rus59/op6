@@ -773,4 +773,7 @@
 
     <!-- Set default live wallpaper -->
     <string name="default_wallpaper_component" translatable="false">com.breel.wallpapers18/.soundviz.wallpaper.variations.SoundVizWallpaperV2</string>
+
+  <!-- Whether device has a physical display cutout -->
+    <bool name="config_physicalDisplayCutout">true</bool>
 </resources>
