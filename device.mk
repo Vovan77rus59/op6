@@ -30,7 +30,8 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
-    ThemePicker
+    CallLogManager \
+    PixelThemes
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
