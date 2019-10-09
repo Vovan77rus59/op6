@@ -12,6 +12,9 @@
 /op2(/.*)?               u:object_r:op2_file:s0
 /persist(/.*)?           u:object_r:persist_file:s0
 
+# Audio
+/system/etc/audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0
+
 # MSM IRQ balance config
 /system/etc/msm_irqbalance.conf                  u:object_r:vendor_configs_file:s0
 
@@ -27,7 +30,3 @@
 
 # Power HAL
 # /system/lib64/hw/power\.qcom\.so    u:object_r:vendor_file:s0
-
-# Vendor overlay
-/(product|system/product)/vendor_overlay/[0-9]+/etc(/.*)?      u:object_r:vendor_configs_file:s0
-/(product|system/product)/vendor_overlay/[0-9]+/lib(64)?/hw    u:object_r:vendor_hal_file:s0
