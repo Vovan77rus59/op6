@@ -22,11 +22,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oneplus device
 $(call inherit-product, device/oneplus/oneplus6/device.mk)
 
-# Inherit some common PiXeN stuff.
-$(call inherit-product, vendor/pixen/products/common.mk)
+# Inherit some common Syberia stuff.
+$(call inherit-product, vendor/nitrogen/products/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := pixen_oneplus6
+PRODUCT_NAME := nitrogen_oneplus6
 PRODUCT_DEVICE := oneplus6
 PRODUCT_BRAND := OnePlus
 PRODUCT_MANUFACTURER := OnePlus
