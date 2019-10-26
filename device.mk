@@ -28,7 +28,7 @@ $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 PRODUCT_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     CallLogManager \
     PixelThemes
@@ -168,7 +168,7 @@ PRODUCT_PACKAGES += \
     DeviceParts
 
 # Pixel Livewallpapers
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     WallpapersBReel2018 \
     LiveWallpapersPicker
 
@@ -214,17 +214,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Updater
 
-IS_PHONE := true
+#IS_PHONE := true
 
-ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=android-google
-else
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#else
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
-endif
+#endif
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.debug.alloc=0 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
@@ -237,6 +237,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.setupwizard.rotation_locked=true
 
 # GApps
-include vendor/gapps/config.mk
+#include vendor/gapps/config.mk
 # Pixel Style
-include vendor/pixelstyle/config.mk
+#include vendor/pixelstyle/config.mk
