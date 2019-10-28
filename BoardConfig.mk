@@ -180,7 +180,7 @@ BUILD_BROKEN_PHONY_TARGETS := true
     device/qcom/sepolicy/generic/public \
     device/qcom/sepolicy/qva/public
 
-BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicytemp
+BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicytemp
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(VENDOR_PATH)
