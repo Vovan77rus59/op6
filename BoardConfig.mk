@@ -170,7 +170,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 BUILD_BROKEN_PHONY_TARGETS := true
 
 # Sepolicy
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/qcom/sepolicy/generic/private \
