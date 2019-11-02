@@ -41,10 +41,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=OnePlus6 \
     PRODUCT_NAME=OnePlus6 \
-    PRIVATE_BUILD_DESC="crosshatch-user 10 QP1A.191005.007 5878874 release-keys"
+    PRIVATE_BUILD_DESC="OnePlus6-user 10 QKQ1.190716.003 1910050400 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/crosshatch/crosshatch:10/QP1A.191005.007/5878874:user/release-keys
+BUILD_FINGERPRINT := OnePlus/OnePlus6/OnePlus6:10:QKQ1.190716.003/1910050400:user/release-keys
 
 TARGET_VENDOR := OnePlus
 
