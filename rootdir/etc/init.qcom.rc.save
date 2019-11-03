@@ -1,0 +1,109 @@
+
+on post-fs
+    mount none /system/lib64/hw/power.qcom.so /vendor/lib64/hw/power.qcom.so bind
+    mount none /system/etc/msm_irqbalance.conf /vendor/etc/msm_irqbalance.conf bind
+
+
+on early-init
+
+    # mount schedtune and blkio together in "on early-init",
+    # so that mount schedtune in init.rc will fail
+    mkdir /dev/stune
+    mount cgroup none /dev/stune nodev noexec nosuid schedtune,blkio
+
+    mkdir /dev/stune/foreground
+    mkdir /dev/stune/background
+    mkdir /dev/stune/top-app
+    mkdir /dev/stune/rt
+
+    # blkio init setting
+    write /dev/stune/blkio.group_idle 0
+    write /dev/stune/foreground/blkio.group_idle 0
+    write /dev/stune/background/blkio.group_idle 0
+    write /dev/stune/top-app/blkio.group_idle 0
+    write /dev/stune/rt/blkio.group_idle 0
+
+on boot
+    # Touchpanel
+    chmod 0660 /proc/touchpanel/double_swipe_enable
+    chmod 0660 /proc/touchpanel/double_tap_enable
+    chmod 0660 /proc/touchpanel/down_arrow_enable
+    chmod 0660 /proc/touchpanel/down_swipe_enable
+    chmod 0660 /proc/touchpanel/left_arrow_enable
+    chmod 0660 /proc/touchpanel/left_swipe_enable
+    chmod 0660 /proc/touchpanel/letter_m_enable
+    chmod 0660 /proc/touchpanel/letter_o_enable
+    chmod 0660 /proc/touchpanel/letter_s_enable
+    chmod 0660 /proc/touchpanel/letter_w_enable
+    chmod 0660 /proc/touchpanel/right_arrow_enabl
+    chmod 0660 /proc/touchpanel/right_swipe_enabl
+    chmod 0660 /proc/touchpanel/up_arrow_enable
+    chmod 0660 /proc/touchpanel/up_swipe_enable
+    chown system system /proc/touchpanel/double_swipe_enable
+    chown system system /proc/touchpanel/double_tap_enable
+    chown system system /proc/touchpanel/down_arrow_enable
+    chown system system /proc/touchpanel/down_swipe_enable
+    chown system system /proc/touchpanel/left_arrow_enable
+    chown system system /proc/touchpanel/left_swipe_enable
+    chown system system /proc/touchpanel/letter_m_enable
+    chown system system /proc/touchpanel/letter_o_enable
+    chown system system /proc/touchpanel/letter_s_enable
+    chown system system /proc/touchpanel/letter_w_enable
+    chown system system /proc/touchpanel/right_arrow_enabl
+    chown system system /proc/touchpanel/right_swipe_enabl
+    chown system system /proc/touchpanel/up_arrow_enable
+    chown system system /proc/touchpanel/up_swipe_enable
+
+    # Goodix proximity node
+    chmod 0660 /sys/devices/platform/soc/soc:goodix_fp/proximity_state
+    chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
+
+    # OTG switch
+    chown system system /sys/class/power_supply/usb/otg_switch
+    chmod 0660 /sys/class/power_supply/usb/otg_switch
+
+    mkdir /data/misc/camera 0770 cameraserver audio
+    write /data/misc/camera/client_package_name 0
+    chown cameraserver audio /data/misc/camera/client_package_name
+    chmod 0644 /data/misc/camera/client_package_name
+
+       # Graphics
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/modes
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/modes
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_srgb_color_mode
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_srgb_color_mode
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_p3_mode
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_p3_mode
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/night_mode
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/night_mode
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_wide_color_mode
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_wide_color_mode
+
+on post-fs
+    chmod 0664 /sys/devices/virtual/graphics/fb0/idle_time
+    chown system graphics /sys/devices/virtual/graphics/fb0/idle_time
+    write /sys/devices/virtual/graphics/fb0/idle_time 100
+ 
+   # Vibrator
+    chown system system /sys/class/leds/vibrator/vmax_override
+    write /sys/class/leds/vibrator/vmax_override 1
+    chown system system /sys/class/leds/vibrator/vmax_mv_user
+    chown system system /sys/class/leds/vibrator/vmax_mv_call
+    chown system system /sys/class/leds/vibrator/vmax_mv_strong
+
+    #DC dimming
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en
+
+on charger
+    write /sys/class/backlight/panel0-backlight/brightness 150
+
+service dashd /sbin/dashd
+    class core
+    critical
+    group root system
+
+service factory-hal-1-0 /system/bin/true
+    disabled
