@@ -101,7 +101,7 @@
             android:title="@string/swap_back_recents_title"
             android:persistent="false" />
     </PreferenceCategory>
--->
+
     <PreferenceCategory
         android:key="graphics"
         android:title="@string/graphics_title">
@@ -119,5 +119,5 @@
                     android:targetPackage="org.omnirom.device"
                     android:targetClass="org.omnirom.device.PanelSettingsActivity" />
         </Preference>
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 </PreferenceScreen>
