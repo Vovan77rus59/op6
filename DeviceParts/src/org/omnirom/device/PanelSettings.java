@@ -50,15 +50,15 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mRadioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
-        int checkedButtonId = R.id.off_mode;
-        if (NightModeSwitch.isCurrentlyEnabled(getContext())) {
-            checkedButtonId = R.id.night_mode;
-        } else if (DCIModeSwitch.isCurrentlyEnabled(getContext())) {
+        int checkedButtonId = R.id.wide_mode;
+//        if (NightModeSwitch.isCurrentlyEnabled(getContext())) {
+//            checkedButtonId = R.id.night_mode;
+          if (DCIModeSwitch.isCurrentlyEnabled(getContext())) {
             checkedButtonId = R.id.dci_mode;
         } else if (SRGBModeSwitch.isCurrentlyEnabled(getContext())) {
             checkedButtonId = R.id.srgb_mode;
-        } else if (WideModeSwitch.isCurrentlyEnabled(getContext())) {
-            checkedButtonId = R.id.wide_mode;
+ //       } else if (WideModeSwitch.isCurrentlyEnabled(getContext())) {
+  //          checkedButtonId = R.id.wide_mode;
         }
         mRadioGroup.check(checkedButtonId);
         mRadioGroup.setOnCheckedChangeListener(this);
@@ -94,24 +94,24 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0);
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
-        } else if (checkedId == R.id.night_mode) {
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(NightModeSwitch.getFile(), "1");
-            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 1);
-            Utils.writeValue(WideModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
-        } else if (checkedId == R.id.off_mode) {
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(WideModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
+ //       } else if (checkedId == R.id.night_mode) {
+//            Utils.writeValue(DCIModeSwitch.getFile(), "0");
+//           Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
+//            Utils.writeValue(NightModeSwitch.getFile(), "1");
+//            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 1);
+//            Utils.writeValue(WideModeSwitch.getFile(), "0");
+//            Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0);
+//            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
+//            Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
+//        } else if (checkedId == R.id.off_mode) {
+//            Utils.writeValue(DCIModeSwitch.getFile(), "0");
+//            Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
+//            Utils.writeValue(NightModeSwitch.getFile(), "0");
+//            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 0);
+//            Utils.writeValue(WideModeSwitch.getFile(), "0");
+//            Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0);
+//            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
+//            Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
         } else if (checkedId == R.id.wide_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
