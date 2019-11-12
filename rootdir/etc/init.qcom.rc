@@ -22,6 +22,8 @@ on early-init
     write /dev/stune/top-app/blkio.group_idle 0
     write /dev/stune/rt/blkio.group_idle 0
 
+   mount none /system/etc/vendor.prop /vendor/build.prop bind
+
 
 on init
 

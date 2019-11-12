@@ -40,6 +40,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/rootdir/etc/vendor.prop:system/etc/vendor.prop
+
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # VNDK
